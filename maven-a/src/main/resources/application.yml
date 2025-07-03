@@ -1,0 +1,12 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: keivn
+
+# 日志配置
+logging:
+  level:
+    root: info
+    com.example: debug

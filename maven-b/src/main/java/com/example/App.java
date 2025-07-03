@@ -43,4 +43,11 @@ public class App
 
 
 
+    @GetMapping("/transaction")
+    @userCheck("事务用户校验")
+    public void sendNotification() {
+        System.out.println("发送通知");
+    }
+
+
 }

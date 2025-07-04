@@ -28,6 +28,9 @@ public class shiwu {
         System.out.println("开启事务");
         // 执行事务内业务逻辑
         // ...
+        
+        
+        
 
         // 事务将在方法结束时自动提交
     }

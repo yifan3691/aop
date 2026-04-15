@@ -75,6 +75,7 @@ pipeline {
                         set -e
                         ssh -i "$SSH_KEY" -o StrictHostKeyChecking=no "$SSH_USER@$DEPLOY_HOST" "mkdir -p '$DEPLOY_DIR'"
                         scp -i "$SSH_KEY" -o StrictHostKeyChecking=no maven-a/target/maven-a-1.0-SNAPSHOT.jar "$SSH_USER@$DEPLOY_HOST:$DEPLOY_DIR/app.jar"
+                        ssh -i "$SSH_KEY" -o StrictHostKeyChecking=no "$SSH_USER@$DEPLOY_HOST" "sudo systemctl restart aop && sudo systemctl status aop --no-pager --lines=20"
                     '''
                 }
             }
